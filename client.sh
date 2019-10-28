@@ -25,5 +25,10 @@ ssh mpiuser@master mkdir -p .ssh
 cat .ssh/id_rsa.pub | ssh mpiuser@master 'cat >> .ssh/authorized_keys'
 ssh mpiuser@master 'chmod 700 .ssh'
 chmod 640 .ssh/authorized_keys
+#This will create a folder in $HOME for mpiuser named cloud that is shared in cluster
+mkdir cloud
 exit
+
+#Install NFS service
+sudo dnf -y install nfs-utils
 
