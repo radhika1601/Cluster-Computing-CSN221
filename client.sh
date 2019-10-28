@@ -31,4 +31,11 @@ exit
 
 #Install NFS service
 sudo dnf -y install nfs-utils
+#mount the shared directory
+sudo mount -t nfs master:/home/mpiuser/cloud /home/mpiuser/cloud
+#to check the mounted directories
+df -h
+#Create a systems table in /etc/fstab
+echo "Add master:/home/mpiuser/cloud /home/mpiuser/cloud nfs  to /etc/fstab"
+sudo vi /etc/fstab
 
